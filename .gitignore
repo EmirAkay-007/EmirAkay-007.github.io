@@ -1,0 +1,8 @@
+# Files Windows and macOS create on their own
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor settings
+.vscode/
+.idea/

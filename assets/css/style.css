@@ -1,0 +1,317 @@
+/* Hüseyin Emir Akay – personal site
+   One typeface (Georgia, with Gelasio as a metric-compatible fallback),
+   a monospace face only for data (dates, coordinates), and one accent:
+   amber marks the next waypoint and nothing else. */
+
+@font-face { font-family: "Gelasio"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/gelasio-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Gelasio"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/gelasio-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Gelasio"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../fonts/gelasio-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Gelasio"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../fonts/gelasio-latin-ext-400-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Gelasio"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("../fonts/gelasio-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Gelasio"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("../fonts/gelasio-latin-ext-700-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --night:  #0A1326;   /* page */
+  --deck:   #0F1B33;   /* mat behind images */
+  --rule:   #22375E;   /* frames */
+  --paper:  #E6ECF7;   /* text */
+  --haze:   #9DB0D3;   /* secondary text */
+  --signal: #7FB2FF;   /* links, flown route */
+  --amber:  #F2B544;   /* next waypoint only */
+
+  --serif: Georgia, "Gelasio", "Times New Roman", serif;
+  --mono: "Cascadia Mono", Consolas, ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --section: clamp(4rem, 9vw, 7rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--signal); color: var(--night); }
+
+.wrap {
+  width: 100%;
+  max-width: 66rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+h1, h2, h3 { font-weight: 400; margin: 0; }
+p { margin: 0 0 1rem; max-width: 38em; }
+ul { margin: 0 0 1rem; padding-left: 1.1rem; max-width: 38em; }
+li { margin-bottom: 0.4rem; }
+li::marker { color: var(--haze); }
+figure { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: var(--signal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+a:hover { color: var(--paper); }
+a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+
+.data {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--haze);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hero ------------------------------------------------------------ */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: end;
+  padding-top: clamp(3.5rem, 10vw, 8rem);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 1.4rem + 4.6vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+
+.lede {
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem);
+  line-height: 1.4;
+  max-width: 24em;
+  margin-bottom: 1.25rem;
+}
+
+.hero p:not(.lede) { color: var(--haze); }
+
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.75rem;
+}
+.contact li { margin: 0; }
+
+.place { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.9rem; margin: 0; }
+
+.portrait {
+  border: 1px solid var(--rule);
+  background: var(--deck);
+  padding: 0.5rem;
+}
+
+/* Sections -------------------------------------------------------- */
+
+main > section { margin-top: var(--section); }
+
+h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem);
+  line-height: 1.2;
+  margin-bottom: 2.25rem;
+}
+
+h3 { font-size: 1.35rem; line-height: 1.3; }
+
+/* Flight log: flown legs are solid, the planned leg is dashed ------ */
+
+.route {
+  --gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.route li {
+  position: relative;
+  margin: 0;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.route li::before {               /* waypoint */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--signal);
+}
+
+.route li:not(:last-child)::after {   /* leg to the next waypoint */
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 14px;
+  right: calc(-1 * var(--gap) + 5px);
+  height: 1px;
+  background: var(--signal);
+  opacity: 0.55;
+  transform-origin: left center;
+}
+
+.route li:nth-last-child(2)::after {
+  opacity: 1;
+  background: repeating-linear-gradient(90deg, var(--haze) 0 5px, transparent 5px 10px);
+}
+
+.route .next::before {            /* the one amber mark on the page */
+  width: 9px;
+  height: 9px;
+  border-radius: 0;
+  background: transparent;
+  border: 1.5px solid var(--amber);
+  transform: rotate(45deg);
+}
+
+.route strong { font-weight: 400; font-size: 1.05rem; line-height: 1.3; }
+.route .note { color: var(--haze); font-size: 0.95rem; line-height: 1.4; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .route li:not(:last-child)::after { animation: fly 0.45s ease-out both; }
+  .route li:nth-child(1)::after { animation-delay: 0.3s; }
+  .route li:nth-child(2)::after { animation-delay: 0.75s; }
+  .route li:nth-child(3)::after { animation-delay: 1.2s; }
+  .route li:nth-child(4)::after { animation-delay: 1.65s; }
+  .route li:nth-child(5)::after { animation-delay: 2.1s; }
+  @keyframes fly { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* Ground control stations ----------------------------------------- */
+
+.station {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.station + .station { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+
+.station figure {
+  border: 1px solid var(--rule);
+  background: var(--deck);
+  padding: 0.5rem;
+}
+
+.station h3 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+.stack { font-style: italic; color: var(--haze); }
+.station .stack { margin-bottom: 1.25rem; }
+.station-text { font-size: 1.05rem; }
+.credit { color: var(--haze); font-size: 0.95rem; }
+
+/* Rows: other projects, experience -------------------------------- */
+
+.row {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 0.5rem 2rem;
+}
+.row + .row { margin-top: 2.5rem; }
+
+.row-head { display: flex; flex-direction: column; gap: 0.2rem; padding-top: 0.2rem; }
+.row-head h3 { font-size: 1.2rem; }
+.row-body h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+.row-body p:last-child, .row-body ul:last-child { margin-bottom: 0; }
+.row-body .stack { margin-bottom: 0.6rem; }
+
+/* Skills ----------------------------------------------------------- */
+
+.skills {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 0.75rem 2rem;
+  margin: 0;
+}
+.skills dt { color: var(--haze); }
+.skills dd { margin: 0; }
+
+/* Footer ----------------------------------------------------------- */
+
+.nowrap { white-space: nowrap; }
+
+footer {
+  margin-top: var(--section);
+  padding-bottom: 3rem;
+  color: var(--haze);
+}
+.footer-inner { padding-top: 2rem; border-top: 1px solid var(--rule); }
+footer p { margin-bottom: 0.5rem; }
+.fine { font-size: 0.9rem; }
+
+/* Narrow screens --------------------------------------------------- */
+
+@media (max-width: 56rem) {
+  .route { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2.5rem; }
+  .route li:nth-child(3)::after { display: none; }
+  .station { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 40rem) {
+  body { font-size: 1.0625rem; }
+  .hero { grid-template-columns: 1fr; }
+  .portrait { order: -1; width: 9.5rem; padding: 0.35rem; }
+
+  .route { grid-template-columns: 1fr; --gap: 1.6rem; }
+  .route li { padding-top: 0; padding-left: 1.6rem; }
+  .route li::before { top: 0.4rem; }
+  .route li:not(:last-child)::after,
+  .route li:nth-child(3)::after {
+    display: block;
+    top: calc(0.4rem + 14px);
+    left: 4px;
+    right: auto;
+    bottom: calc(-1 * var(--gap) - 0.4rem + 5px);
+    width: 1px;
+    height: auto;
+    transform-origin: center top;
+  }
+  .route li:nth-last-child(2)::after {
+    background: repeating-linear-gradient(180deg, var(--haze) 0 5px, transparent 5px 10px);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .route li:not(:last-child)::after { animation-name: fly-down; }
+    @keyframes fly-down { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  }
+
+  .row, .skills { grid-template-columns: 1fr; }
+  .row-head { flex-direction: row; align-items: baseline; gap: 0.9rem; }
+  .skills dd { margin-bottom: 0.6rem; }
+}
