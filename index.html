@@ -1,29 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hüseyin Emir Akay – UAV Ground Control and Operator Interface Software</title>
-  <meta name="description" content="Hüseyin Emir Akay is a Computer Engineering student at Atatürk University who builds ground control station and operator interface software for unmanned aerial vehicles. Vice captain of the ARES UAV Team, TEKNOFEST Fighting UAV finalist in 2025 and 2026.">
+  <meta name="description" content="Hüseyin Emir Akay builds ground control station and operator interface software for unmanned aerial vehicles. Computer Engineering student at Atatürk University, vice captain of the ARES UAV Team, TEKNOFEST Fighting UAV finalist in 2025 and 2026.">
   <meta name="author" content="Hüseyin Emir Akay">
   <link rel="canonical" href="https://emirakay-007.github.io/">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0A1326">
+  <meta name="theme-color" content="#060D1E">
 
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Hüseyin Emir Akay">
   <meta property="og:title" content="Hüseyin Emir Akay">
   <meta property="og:description" content="Ground control station and operator interface software for unmanned aerial vehicles.">
   <meta property="og:url" content="https://emirakay-007.github.io/">
-  <meta property="og:image" content="https://emirakay-007.github.io/assets/img/huseyin-emir-akay.jpg">
-  <meta property="og:image:alt" content="Portrait of Hüseyin Emir Akay">
+  <meta property="og:image" content="https://emirakay-007.github.io/assets/img/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hüseyin Emir Akay: ground control station and operator interface software for UAVs">
   <meta property="profile:first_name" content="Hüseyin Emir">
   <meta property="profile:last_name" content="Akay">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="preload" href="assets/fonts/literata-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <script>
+    (function (d) {
+      var c = d.documentElement.classList;
+      c.remove("no-js"); c.add("js");
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var save = navigator.connection && navigator.connection.saveData;
+      c.add(reduce || save ? "still" : "motion");
+    })(document);
+  </script>
 
   <script type="application/ld+json">
   {
@@ -36,9 +50,9 @@
     "email": "mailto:huseyinemirakay@gmail.com",
     "jobTitle": "Computer Engineering Student",
     "address": { "@type": "PostalAddress", "addressLocality": "Erzurum", "addressCountry": "TR" },
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Atatürk University" },
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Atatürk University" },
     "memberOf": { "@type": "Organization", "name": "ARES UAV Team" },
-    "knowsAbout": ["Ground control stations", "MAVLink", "ArduPilot", "PySide6", "Qt", "QML", "C#", "Computer vision", "Unmanned aerial vehicles"],
+    "knowsAbout": ["Ground control stations", "Operator interfaces", "MAVLink", "ArduPilot", "PySide6", "Qt", "QML", "C#", "Computer vision", "Unmanned aerial vehicles"],
     "sameAs": [
       "https://github.com/EmirAkay-007",
       "https://www.linkedin.com/in/huseyinemirakay"
@@ -48,201 +62,453 @@
 </head>
 <body>
 
-<header class="hero wrap">
-  <div class="hero-text">
-    <h1>Hüseyin Emir Akay</h1>
-    <p class="lede">I build ground control station and operator interface software for unmanned aerial vehicles.</p>
-    <p>Third-year Computer Engineering student at Atatürk University, and vice captain and software developer of the ARES UAV Team, a TEKNOFEST Fighting UAV finalist in 2025 and 2026. I’m looking for an internship in UAV operator interfaces and ground control software: remote, hybrid or on-site.</p>
-    <ul class="contact" aria-label="Contact">
-      <li><a href="https://github.com/EmirAkay-007">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/huseyinemirakay">LinkedIn</a></li>
-      <li><a href="mailto:huseyinemirakay@gmail.com">huseyinemirakay@gmail.com</a></li>
-    </ul>
-    <p class="place">Erzurum, Türkiye <span class="data">39°54′N 41°16′E</span></p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar" data-bar>
+  <div class="bar-in">
+    <a class="bar-name" href="#top" tabindex="-1" aria-hidden="true">Hüseyin Emir Akay</a>
+    <nav class="bar-nav" aria-label="Quick links">
+      <a href="cv.html">CV</a>
+      <a href="mailto:huseyinemirakay@gmail.com">Email</a>
+    </nav>
   </div>
-  <figure class="portrait">
-    <img src="assets/img/huseyin-emir-akay.jpg" width="720" height="900" alt="Portrait of Hüseyin Emir Akay" fetchpriority="high">
-  </figure>
+  <div class="bar-progress" aria-hidden="true"><i></i></div>
 </header>
 
-<main>
+<nav class="rail" aria-label="Page sections" data-rail>
+  <ol>
+    <li><a href="#top"><span>Start</span></a></li>
+    <li><a href="#dive"><span>The dive</span></a></li>
+    <li><a href="#detection"><span>Detection</span></a></li>
+    <li><a href="#stations"><span>Ground stations</span></a></li>
+    <li><a href="#log"><span>Flight log</span></a></li>
+    <li><a href="#projects"><span>Projects</span></a></li>
+    <li><a href="#record"><span>Record</span></a></li>
+    <li class="dest"><a href="#next"><span>Next</span></a></li>
+  </ol>
+  <i class="rail-flown"></i>
+  <i class="rail-ahead"></i>
+  <svg class="rail-ac" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 15 L13.5 2 L8 5.5 L2.5 2 Z"/></svg>
+</nav>
 
-  <section class="wrap" aria-labelledby="log-title">
-    <h2 id="log-title">Flight log</h2>
-    <ol class="route">
-      <li>
-        <span class="data">Sep 2024</span>
-        <strong>Computer Engineering</strong>
-        <span class="note">Started at Atatürk University</span>
-      </li>
-      <li>
-        <span class="data">Feb 2025</span>
-        <strong>Ground control station lead</strong>
-        <span class="note">Joined the ARES UAV Team</span>
-      </li>
-      <li>
-        <span class="data">Sep 2025</span>
-        <strong>TEKNOFEST finalist</strong>
-        <span class="note">25th of 873 teams</span>
-      </li>
-      <li>
-        <span class="data">Dec 2025</span>
-        <strong>Vice captain</strong>
-        <span class="note">Software developer, ARES</span>
-      </li>
-      <li>
-        <span class="data">2026</span>
-        <strong>TEKNOFEST finalist</strong>
-        <span class="note">34th of 1,053 teams</span>
-      </li>
-      <li class="next">
-        <span class="data">Next</span>
-        <strong>Internship</strong>
-        <span class="note">UAV interfaces and ground software</span>
-      </li>
-    </ol>
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="name">
+    <div class="wrap hero-in">
+      <h1 class="name" id="name" data-name>Hüseyin Emir Akay</h1>
+      <div class="hero-text">
+        <p class="lede">I build ground control stations: the software an operator flies a UAV from.</p>
+        <p class="intro">Third-year Computer Engineering student at Atatürk University, and vice captain and software developer of the ARES UAV Team, a TEKNOFEST Fighting UAV finalist in 2025 and 2026.</p>
+        <ul class="links" aria-label="Contact and profiles">
+          <li><a href="https://github.com/EmirAkay-007">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/huseyinemirakay">LinkedIn</a></li>
+          <li><a href="mailto:huseyinemirakay@gmail.com">Email</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </div>
+      <figure class="portrait">
+        <img src="assets/img/huseyin-emir-akay.webp" width="720" height="900" alt="Portrait of Hüseyin Emir Akay" fetchpriority="high">
+        <figcaption><span>Erzurum, Türkiye</span> <span class="data">39°54′N 41°16′E</span></figcaption>
+      </figure>
+    </div>
+    <div class="horizon" aria-hidden="true"></div>
   </section>
 
-  <section class="wrap" aria-labelledby="gcs-title">
-    <h2 id="gcs-title">Ground control stations</h2>
+  <section class="dive" id="dive" aria-labelledby="dive-title">
+    <div class="wrap section-head">
+      <h2 id="dive-title">The autonomous dive</h2>
+      <p>In the competition’s target task, the aircraft dives at a QR code on the ground and pulls out on its own. I designed and wrote the guidance and the QR detection. <span class="motion-only">Scroll to fly the run, </span><span class="still-only">Below is the run, </span>recorded from the onboard camera in ArduPilot SITL and Gazebo.</p>
+    </div>
 
-    <article class="station">
-      <figure>
-        <img src="assets/img/sihainterface.webp" width="1280" height="800" loading="lazy"
-             alt="SihaInterface connected to ArduPilot SITL and Gazebo: telemetry list on the left, simulated camera above, map below">
-      </figure>
-      <div class="station-text">
-        <h3>SihaInterface</h3>
-        <p class="stack">Python, PySide6 (Qt Widgets and QML), pymavlink</p>
-        <p>The ARES team’s ground station for competition flights: a MAVLink link to ArduPilot or PX4, a map with the other aircraft, no-fly zones, geofence and mission, the camera with QR detection, and a live link to the competition server.</p>
-        <p>What I built:</p>
-        <ul>
-          <li>Guidance for the autonomous dive onto a QR-code target, a state machine flown in guided mode that restores the normal flight envelope after every run.</li>
-          <li>QR detection with OpenCV and zxing-cpp / pyzbar that falls back through contrast, sharpening, upscaling and deblur stages.</li>
-          <li>Since August 2026, an independent continuation: parameter tables, simulator connection and an evaluation-video recorder.</li>
-        </ul>
-        <p class="credit">Created and mostly written by Muzaffer Kadir Belen. Route preplanner by Yusuf İslam İnan.</p>
-        <p><a href="https://github.com/EmirAkay-007/SihaInterface">Source and credits on GitHub</a></p>
+    <div class="dive-track" data-dive>
+      <div class="dive-stage wrap">
+        <figure class="dive-screen">
+          <div class="screen">
+            <img class="dive-poster" src="assets/dive/f004.webp" width="640" height="480" alt="Onboard camera view in simulation: level flight above a grass field before the dive">
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <figcaption>Onboard camera in ArduPilot SITL and Gazebo. The time stamp is added by the ground station’s recorder.</figcaption>
+        </figure>
+
+        <div class="dive-panel">
+          <ol class="phases" data-phases>
+            <li data-phase="0">
+              <img class="phase-still" src="assets/dive/f004.webp" width="640" height="480" alt="" loading="lazy">
+              <div>
+                <h3>APPROACHING</h3>
+                <p>Target coordinates arrive from the competition server. The run is refused below 80&nbsp;m; the aircraft lines up on the target at about 100&nbsp;m.</p>
+              </div>
+            </li>
+            <li data-phase="1">
+              <img class="phase-still" src="assets/dive/f045.webp" width="640" height="480" alt="" loading="lazy">
+              <div>
+                <h3>DIVING</h3>
+                <p>Throttle to zero and nose down towards 45° in guided mode, with roll held to 15° so the camera stays on the QR code.</p>
+              </div>
+            </li>
+            <li data-phase="2">
+              <img class="phase-still" src="assets/dive/f089.webp" width="640" height="480" alt="" loading="lazy">
+              <div>
+                <h3>RECOVERING</h3>
+                <p>The pull-out starts the moment the QR code is read, or when the predicted height loss would reach the 50&nbsp;m floor, so the lowest point lands on the floor instead of below it.</p>
+              </div>
+            </li>
+            <li data-phase="3">
+              <img class="phase-still" src="assets/dive/f118.webp" width="640" height="480" alt="" loading="lazy">
+              <div>
+                <h3>RESUMING</h3>
+                <p>Above 90&nbsp;m the run ends. Every way out of it, including force-end, the watchdog and a lost link, goes through one exit that writes the normal flight envelope back.</p>
+              </div>
+            </li>
+          </ol>
+
+          <figure class="profile">
+            <svg viewBox="0 0 420 116" role="img" aria-labelledby="profile-desc" data-profile>
+              <desc id="profile-desc">Schematic altitude profile of the run: level at about 100 metres, a 45 degree dive, a pull-out that bottoms out on the 50 metre floor, and a climb until the run ends above 90 metres.</desc>
+              <g class="axis">
+                <line x1="50" y1="50" x2="416" y2="50" class="thr"/>
+                <line x1="50" y1="95" x2="416" y2="95" class="thr"/>
+              </g>
+              <g class="ticks">
+                <text x="42" y="23.5">100 m</text>
+                <text x="42" y="53.5">80</text>
+                <text x="42" y="98.5">50</text>
+              </g>
+              <g class="notes">
+                <text x="414" y="45" text-anchor="end">minimum to start</text>
+                <text x="414" y="90" text-anchor="end">floor</text>
+              </g>
+              <g class="track">
+                <path d="M50 20 L112 20"/>
+                <path d="M112 20 C120 20 124 24 128 28 L168 74"/>
+                <path d="M168 74 C175 85 181 95 190 95 C216 95 260 56 304 35"/>
+                <path d="M304 35 C328 28 358 26 416 26"/>
+              </g>
+              <g class="flown">
+                <path d="M50 20 L112 20"/>
+                <path d="M112 20 C120 20 124 24 128 28 L168 74"/>
+                <path d="M168 74 C175 85 181 95 190 95 C216 95 260 56 304 35"/>
+                <path d="M304 35 C328 28 358 26 416 26"/>
+              </g>
+              <g class="points">
+                <circle cx="168" cy="74" r="2.2"/>
+                <text x="176" y="72">pull-out</text>
+                <circle cx="304" cy="35" r="2.2"/>
+                <text x="296" y="18" text-anchor="middle">run ends, 90 m</text>
+              </g>
+              <circle class="marker" r="4" cx="50" cy="20"/>
+            </svg>
+            <figcaption>Schematic of the run, drawn from the thresholds in the code.</figcaption>
+          </figure>
+        </div>
       </div>
-    </article>
+    </div>
 
-    <article class="station">
-      <figure>
-        <img src="assets/img/are-ion.webp" width="1280" height="800" loading="lazy"
-             alt="ARE-İON ground control station: connection panel, telemetry widgets, satellite map and live video">
-      </figure>
-      <div class="station-text">
-        <h3>ARE-İON</h3>
-        <p class="stack">C#, .NET 8, Windows Forms</p>
-        <p>The ground control station I built for the 2025 season, talking to a Pixhawk Cube Orange+ over MAVLink.</p>
-        <ul>
-          <li>MAVLink v1 and v2 decoded from the raw serial stream, with its own heartbeat and a link watchdog that reconnects on its own.</li>
-          <li>Stale-data detection: a value not refreshed for 3 seconds is shown as “no data”, so an old number is never read as live.</li>
-          <li>A satellite map in an embedded Leaflet page driven from C#, and the video processed on board by a Jetson Orin NX.</li>
-        </ul>
-        <p><a href="https://github.com/EmirAkay-007/C-_interface_mavlink">Source and v1.0 release on GitHub</a></p>
+    <div class="wrap real">
+      <div class="real-text">
+        <h3>On the real aircraft</h3>
+        <p>The manoeuvre on the ARES aircraft, filmed from the ground during a test flight, diving from about 100&nbsp;m.</p>
+        <p>Tuning the run shaped the guidance. An altitude sample can be half a second old by the time it is used, and ignoring that once let a run aimed at a 70&nbsp;m floor bottom out at 61&nbsp;m. The pull-out prediction now accounts for the age of every sample.</p>
+        <p class="note">The brackets were added to the footage to mark the aircraft.</p>
       </div>
-    </article>
-  </section>
-
-  <section class="wrap" aria-labelledby="other-title">
-    <h2 id="other-title">Other projects</h2>
-    <div class="rows">
-      <article class="row">
-        <div class="row-head">
-          <h3>Kampüs Yolu</h3>
-          <span class="data">2026</span>
-        </div>
-        <div class="row-body">
-          <p>A map-based campus app where students find others nearby, match by shared interests and meet halfway. Web Programming term project with Yusuf İslam İnan; I wrote the backend.</p>
-          <p class="stack">PHP 8, MySQL 8 spatial queries, JavaScript, Leaflet</p>
-          <p><a href="https://github.com/EmirAkay-007/kampus_yolu">Source on GitHub</a></p>
-        </div>
-      </article>
-      <article class="row">
-        <div class="row-head">
-          <h3>Dogruluk</h3>
-          <span class="data">2026</span>
-        </div>
-        <div class="row-body">
-          <p>A linked-list structure for a bus line that keeps stops and the transitions between them apart, so every stop’s arrival time is ready the moment it is inserted. Data Structures and Algorithms term project.</p>
-          <p class="stack">C++17</p>
-          <p><a href="https://github.com/EmirAkay-007/dogruluk">Source on GitHub</a></p>
-        </div>
-      </article>
-      <article class="row">
-        <div class="row-head">
-          <h3>Embedded target <span class="nowrap">lock-on</span></h3>
-          <span class="data">In progress</span>
-        </div>
-        <div class="row-body">
-          <p>Training target-locking models and optimising them to run in real time on a Raspberry Pi 4 with an AI camera, together with an Arduino UNO Q.</p>
-          <p class="stack">Raspberry Pi 4, Arduino UNO Q, computer vision</p>
-        </div>
-      </article>
+      <figure class="real-clip" data-clip>
+        <video controls muted loop playsinline preload="none" width="478" height="850" poster="assets/video/real-flight-poster.webp" aria-label="The ARES aircraft diving through clouds, filmed from the ground, with brackets marking the aircraft">
+          <source src="assets/video/real-flight.mp4" type='video/mp4; codecs="avc1.64001F"'>
+          <source src="assets/video/real-flight.webm" type='video/webm; codecs="vp9"'>
+        </video>
+        <button class="clip-toggle" type="button" aria-pressed="false" hidden>Pause</button>
+      </figure>
     </div>
   </section>
 
-  <section class="wrap" aria-labelledby="exp-title">
-    <h2 id="exp-title">Experience and education</h2>
-    <div class="rows">
-      <article class="row">
-        <div class="row-head">
-          <span class="data">Dec 2025 – present</span>
+  <section class="detect" id="detection" aria-labelledby="detect-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="detect-title">Finding the target</h2>
+      </div>
+      <div class="detect-grid">
+        <div class="detect-text">
+          <p>During the dive, the camera has to find a QR code in a frame that is moving, tilting and changing light. Each frame is decoded as it is first. If nothing is found, the detector works through contrast enhancement (CLAHE), illumination correction, sharpening, upscaling and motion deblur within a time budget for that frame, and the stage that worked is tried first on the next one.</p>
+          <p class="metric">On a 640×480 webcam stream it averaged <span class="fig">28.8&nbsp;FPS</span> over 750 frames, about <span class="fig">12&nbsp;ms</span> per detection, with zxing-cpp.</p>
         </div>
-        <div class="row-body">
-          <h3>Vice Captain and Software Developer, ARES UAV Team</h3>
-          <ul>
-            <li>Autonomous dive guidance, QR detection and the flight-envelope handling behind them, validated in ArduPilot SITL, Gazebo and ROS 2, then flown on the real aircraft.</li>
-            <li>Integrated a YOLOv8 detector trained on 70,000 images into an OpenCV pipeline, reaching 30–35 FPS with TensorRT.</li>
-            <li>Coordinated the software team and wrote most of the software sections of our design reports.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="row">
-        <div class="row-head">
-          <span class="data">Feb 2025 – Nov 2025</span>
-        </div>
-        <div class="row-body">
-          <h3>Ground Control Station Lead, ARES UAV Team</h3>
-          <ul>
-            <li>Built ARE-İON, the team’s C# ground control station for the 2025 season.</li>
-            <li>Set up video transfer over a Rocket M5 link and JSON data exchange with the competition server.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="row">
-        <div class="row-head">
-          <span class="data">Sep 2024 – Jun 2028</span>
-        </div>
-        <div class="row-body">
-          <h3>B.Sc. Computer Engineering, Atatürk University</h3>
-          <p>GPA 3.35 / 4.00, expected graduation June 2028. Certificate of High Honor (2024–25 Fall) and Certificate of Honor (2024–25 Spring, 2025–26 Spring).</p>
-        </div>
-      </article>
+        <figure class="pipeline" data-pipeline>
+          <div class="pl-row" data-row="0">
+            <p class="pl-label">Frame <i>n</i></p>
+            <ol>
+              <li data-s="plain" data-state="miss">Plain</li>
+              <li data-s="contrast" data-state="miss">Contrast</li>
+              <li data-s="light" data-state="hit">Illumination</li>
+              <li data-s="sharpen" data-state="rest">Sharpen</li>
+              <li data-s="upscale" data-state="rest">Upscale</li>
+              <li data-s="deblur" data-state="rest">Deblur</li>
+            </ol>
+          </div>
+          <div class="pl-row" data-row="1">
+            <p class="pl-label">Frame <i>n</i> + 1</p>
+            <ol>
+              <li data-s="plain" data-state="miss">Plain</li>
+              <li data-s="contrast" data-state="skip">Contrast</li>
+              <li data-s="light" data-state="hit">Illumination</li>
+              <li data-s="sharpen" data-state="rest">Sharpen</li>
+              <li data-s="upscale" data-state="rest">Upscale</li>
+              <li data-s="deblur" data-state="rest">Deblur</li>
+            </ol>
+          </div>
+          <figcaption>How the fallback order works: on frame <i>n</i> the code is found after illumination correction, so frame <i>n</i> + 1 goes from the plain image straight to that stage.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <section class="wrap" aria-labelledby="skills-title">
-    <h2 id="skills-title">Skills</h2>
-    <dl class="skills">
-      <dt>Interfaces</dt><dd>PySide6 / Qt, QML, C# / .NET (WinForms, WPF)</dd>
-      <dt>UAV and autonomy</dt><dd>ArduPilot, MAVLink (pymavlink), Mission Planner, SITL, Gazebo, ROS 2</dd>
-      <dt>Computer vision</dt><dd>OpenCV, YOLOv8, PyTorch, TensorRT</dd>
-      <dt>Embedded</dt><dd>Pixhawk, Jetson Orin NX, Raspberry Pi 4, Arduino UNO Q, UART, I2C, CAN</dd>
-      <dt>Languages</dt><dd>Python, C#, C/C++, JavaScript, PHP, SQL</dd>
-      <dt>Tools</dt><dd>Git, Linux (Ubuntu)</dd>
-    </dl>
+  <section class="stations" id="stations" aria-labelledby="stations-title">
+    <div class="wrap section-head">
+      <h2 id="stations-title">Ground control stations</h2>
+      <p>Two generations of the ARES ground control station: the one I built in C# for the 2025 season, and the Python and Qt station the team flies in 2026.</p>
+    </div>
+
+    <article class="tour wrap" data-tour aria-labelledby="areion-title">
+      <header class="tour-head">
+        <h3 id="areion-title">ARE-İON</h3>
+        <p class="stack">2025, C#, .NET 8, Windows Forms</p>
+      </header>
+      <figure class="tour-fig">
+        <div class="tour-img" style="--ar: 1.7778"><div class="shot">
+          <img src="assets/img/are-ion.webp?v=2" width="1600" height="900" loading="lazy" alt="ARE-İON ground control station: connection settings on the left, telemetry fields in the middle, a satellite map with drawn areas at the top right and live video at the bottom right">
+          <span class="spot" aria-hidden="true"></span>
+        </div></div>
+        <figcaption>ARE-İON during a ground test.</figcaption>
+      </figure>
+      <div class="tour-side">
+      <ol class="tour-steps">
+        <li data-spot="0.4 18.6 16.8 67">
+          <h4>Link</h4>
+          <p>Serial MAVLink to a Pixhawk Cube Orange+. MAVLink v1 and v2 frames are decoded from the raw byte stream; the station sends its own heartbeat and reconnects on its own when the link drops.</p>
+        </li>
+        <li data-spot="17.3 13.2 16.6 75">
+          <h4>Telemetry</h4>
+          <p>Single-purpose fields refreshed five times a second. A value not refreshed for 3&nbsp;seconds is shown as “no data”, so an old number is never read as a live one.</p>
+        </li>
+        <li data-spot="48.3 4 50.4 48.6">
+          <h4>Map</h4>
+          <p>A satellite map in an embedded WebView2 and Leaflet page, driven from C# five times a second: the aircraft turned to its heading, and areas typed in as coordinates drawn on top.</p>
+        </li>
+        <li data-spot="48.3 52.8 50.4 45.6">
+          <h4>Video</h4>
+          <p>The stream processed on board by a Jetson Orin NX, detection boxes included, received through a small TCP-to-HTTP relay.</p>
+        </li>
+      </ol>
+      <p class="tour-link"><a href="https://github.com/EmirAkay-007/C-_interface_mavlink">Source and v1.0 release on GitHub</a></p>
+      </div>
+    </article>
+
+    <article class="tour wrap" data-tour aria-labelledby="siha-title">
+      <header class="tour-head">
+        <h3 id="siha-title">SihaInterface</h3>
+        <p class="stack">2026, Python, PySide6 (Qt Widgets and QML), pymavlink</p>
+      </header>
+      <figure class="tour-fig">
+        <div class="tour-img" style="--ar: 1.2306"><div class="shot">
+          <img src="assets/img/sihainterface-real-flight.webp" width="1329" height="1080" loading="lazy" alt="SihaInterface during a real flight: telemetry list and dive controls on the left, the banking onboard camera at the top right and a map of the university campus with the aircraft at the bottom right">
+          <span class="spot" aria-hidden="true"></span>
+        </div></div>
+        <figcaption>SihaInterface during a real flight over the Atatürk University campus, July 2026.</figcaption>
+      </figure>
+      <div class="tour-side">
+      <ol class="tour-steps">
+        <li data-spot="4 9 30.2 41.6">
+          <h4>Watch list</h4>
+          <p>The flight data the operator chose to see: speeds, attitude, GPS time and position, battery and altitude, over MAVLink on a worker thread separate from the interface.</p>
+        </li>
+        <li data-spot="38.5 6.8 59.2 41">
+          <h4>Camera</h4>
+          <p>The onboard video, where the QR detection runs, with two recorders: one of what the operator sees, and an evaluation video stamped with the competition server’s time.</p>
+        </li>
+        <li data-spot="38.3 47.8 59.4 49.4">
+          <h4>Map</h4>
+          <p>The own aircraft, the others reported by the server, no-fly zones, the geofence and the mission on one map.</p>
+        </li>
+        <li data-spot="4 54 30.2 40.6">
+          <h4>Dive controls</h4>
+          <p>Target coordinates taken from the server, and the start and force-end commands for the autonomous dive.</p>
+        </li>
+      </ol>
+      <p class="credit">SihaInterface was created and mostly written by Muzaffer Kadir Belen; Yusuf İslam İnan wrote the route preplanner. I wrote the dive guidance, the QR detection and the flight-envelope handling behind them, and since August 2026 I maintain an independent continuation.</p>
+      <p class="tour-link"><a href="https://github.com/EmirAkay-007/SihaInterface">Source and credits on GitHub</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="log" id="log" aria-labelledby="log-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="log-title">Flight log</h2>
+      </div>
+      <ol class="route" data-route>
+        <li>
+          <span class="data">Sep 2024</span>
+          <strong>Computer Engineering</strong>
+          <span class="note">Started at Atatürk University</span>
+        </li>
+        <li>
+          <span class="data">Mar 2025</span>
+          <strong>Ground control station lead</strong>
+          <span class="note">Joined the ARES UAV Team</span>
+        </li>
+        <li>
+          <span class="data">Sep 2025</span>
+          <strong>TEKNOFEST finalist</strong>
+          <span class="note">25th of 873 teams</span>
+        </li>
+        <li>
+          <span class="data">Dec 2025</span>
+          <strong>Vice captain</strong>
+          <span class="note">Software developer, ARES</span>
+        </li>
+        <li>
+          <span class="data">2026</span>
+          <strong>TEKNOFEST finalist</strong>
+          <span class="note">34th of 1,053 teams</span>
+        </li>
+        <li class="next">
+          <span class="data">Next</span>
+          <strong>Internship</strong>
+          <span class="note">UAV interfaces and ground software</span>
+        </li>
+      </ol>
+      <div class="log-photos">
+        <figure>
+          <img src="assets/img/ares-teknofest-2026.webp" width="900" height="1200" loading="lazy" alt="Seven members of the ARES team sitting on the runway behind their white fixed-wing aircraft, with competition banners and hills in the background">
+          <figcaption>The ARES team and the aircraft at the TEKNOFEST 2026 Fighting UAV final.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/teknofest-2026-sign.webp" width="720" height="1280" loading="lazy" alt="Hüseyin Emir Akay sitting at the Savaşan İHA Yarışması 2026 sign at TEKNOFEST, pointing at a model aircraft">
+          <figcaption>At the Fighting UAV competition, 2026.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-title">Other projects</h2>
+      </div>
+      <div class="rows">
+        <article class="row">
+          <div class="row-head">
+            <h3 lang="tr">Kampüs Yolu</h3>
+            <span class="data">2026</span>
+          </div>
+          <div class="row-body">
+            <p>A map-based campus app where students find others nearby, match by shared interests and meet halfway. Web Programming term project with Yusuf İslam İnan; I wrote the backend.</p>
+            <p class="stack">PHP 8, MySQL 8 spatial queries, JavaScript, Leaflet</p>
+            <p><a href="https://github.com/EmirAkay-007/kampus_yolu">Source on GitHub</a></p>
+          </div>
+        </article>
+        <article class="row">
+          <div class="row-head">
+            <h3>Dogruluk</h3>
+            <span class="data">2026</span>
+          </div>
+          <div class="row-body">
+            <p>A linked-list structure for a bus line that keeps stops and the transitions between them apart, so every stop’s arrival time is ready the moment it is inserted. Data Structures and Algorithms term project.</p>
+            <p class="stack">C++17</p>
+            <p><a href="https://github.com/EmirAkay-007/dogruluk">Source on GitHub</a></p>
+          </div>
+        </article>
+        <article class="row">
+          <div class="row-head">
+            <h3>Embedded target <span class="nowrap">lock-on</span></h3>
+            <span class="data">In progress</span>
+          </div>
+          <div class="row-body">
+            <p>Training target-locking models and optimising them to run in real time on a Raspberry Pi 4 with an AI camera, together with an Arduino UNO Q.</p>
+            <p class="stack">Raspberry Pi 4, Arduino UNO Q, computer vision</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="record" id="record" aria-labelledby="record-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="record-title">Experience and education</h2>
+      </div>
+      <div class="rows">
+        <article class="row">
+          <div class="row-head"><span class="data">Dec 2025 – present</span></div>
+          <div class="row-body">
+            <h3>Vice Captain and Software Developer, ARES UAV Team</h3>
+            <ul>
+              <li>Autonomous dive guidance, QR detection and the flight-envelope handling behind them, checked in ArduPilot SITL, Gazebo and ROS 2, then flown on the real aircraft.</li>
+              <li>Integrated a YOLOv8 detector trained on 70,000 images into an OpenCV pipeline, reaching 30–35 FPS with TensorRT.</li>
+              <li>Coordinated the software team and wrote most of the software sections of our design reports.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="row-head"><span class="data">Mar 2025 – Nov 2025</span></div>
+          <div class="row-body">
+            <h3>Ground Control Station Lead, ARES UAV Team</h3>
+            <ul>
+              <li>Built ARE-İON, the team’s C# ground control station for the 2025 season.</li>
+              <li>Set up video transfer over a Rocket M5 link and JSON data exchange with the competition server.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="row-head"><span class="data">Sep 2024 – Jun 2028</span></div>
+          <div class="row-body">
+            <h3>B.Sc. Computer Engineering, Atatürk University</h3>
+            <p>GPA 3.35 / 4.00, expected to graduate in June 2028. Certificate of High Honor (2024–25 Fall) and Certificate of Honor (2024–25 Spring, 2025–26 Spring).</p>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="skills-title">Skills</h3>
+      <dl class="skills">
+        <dt>Interfaces</dt><dd>PySide6 / Qt, QML, C# / .NET (WinForms, WPF)</dd>
+        <dt>UAV and autonomy</dt><dd>ArduPilot, MAVLink (pymavlink), Mission Planner, SITL, Gazebo, ROS 2</dd>
+        <dt>Computer vision</dt><dd>OpenCV, YOLOv8, PyTorch, TensorRT</dd>
+        <dt>Embedded</dt><dd>Pixhawk, Jetson Orin NX, Raspberry Pi 4, Arduino UNO Q, UART, I2C, CAN</dd>
+        <dt>Languages</dt><dd>Python, C#, C/C++, JavaScript, PHP, SQL</dd>
+        <dt>Tools</dt><dd>Git, Linux (Ubuntu)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing" id="next" aria-labelledby="next-title">
+    <div class="wrap closing-in" data-closing>
+      <div class="closing-text">
+        <h2 id="next-title">Next waypoint</h2>
+        <p class="lede">An internship in UAV operator interfaces and ground control software.</p>
+        <p>Remote, hybrid or on-site, and open to relocating.</p>
+        <p class="mail"><a href="mailto:huseyinemirakay@gmail.com">huseyinemirakay@gmail.com</a></p>
+        <ul class="links" aria-label="Profiles">
+          <li><a href="https://github.com/EmirAkay-007">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/huseyinemirakay">LinkedIn</a></li>
+          <li><a href="cv.html">CV</a></li>
+        </ul>
+      </div>
+      <figure class="dusk">
+        <img src="assets/img/launch-at-dusk.webp" width="1100" height="1368" loading="lazy" alt="Silhouette of Hüseyin Emir Akay at dusk, standing on a hay bale and holding the UAV above his head">
+      </figure>
+      <i class="dusk-line" aria-hidden="true"></i>
+    </div>
   </section>
 
 </main>
 
-<footer class="wrap">
-  <div class="footer-inner">
-    <p>Write to me at <a href="mailto:huseyinemirakay@gmail.com">huseyinemirakay@gmail.com</a>, or find me on <a href="https://github.com/EmirAkay-007">GitHub</a> and <a href="https://www.linkedin.com/in/huseyinemirakay">LinkedIn</a>.</p>
-    <p class="fine">© 2026 Hüseyin Emir Akay</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <p>© 2026 Hüseyin Emir Akay</p>
+      <p class="colophon">Set in Literata, and in B612 Mono, a typeface developed with Airbus for cockpit screens.</p>
+    </div>
   </div>
 </footer>
 
+<script type="module" src="assets/js/main.js?v=2"></script>
 </body>
 </html>

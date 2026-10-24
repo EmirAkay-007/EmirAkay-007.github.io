@@ -3,18 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found – Hüseyin Emir Akay</title>
+  <title>No waypoint here – Hüseyin Emir Akay</title>
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0A1326">
+  <meta name="theme-color" content="#060D1E">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css?v=2">
+  <style>
+    .lost { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-block: 4rem; }
+    .lost h1 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1.05; letter-spacing: -.018em; margin-bottom: 1.2rem; }
+    .lost p { color: var(--haze); max-width: 30em; }
+    .lost svg { width: min(100%, 520px); height: auto; margin: 0 0 2.4rem; overflow: visible; }
+  </style>
 </head>
 <body>
-  <main class="wrap" style="padding-top: clamp(4rem, 14vw, 9rem); padding-bottom: 6rem;">
-    <h1 style="font-size: clamp(2rem, 1.4rem + 2.5vw, 3rem); margin-bottom: 1.25rem;">No page at this address</h1>
-    <p style="color: var(--haze);">The link may be mistyped, or the page may have moved.</p>
-    <p><a href="/">Go to the homepage</a></p>
+  <main class="wrap lost">
+    <svg viewBox="0 0 520 40" aria-hidden="true">
+      <line x1="6" y1="20" x2="250" y2="20" stroke="#8CB7FF" stroke-opacity=".6" stroke-width="1"/>
+      <circle cx="6" cy="20" r="4.5" fill="#8CB7FF"/>
+      <circle cx="128" cy="20" r="4.5" fill="#8CB7FF"/>
+      <circle cx="250" cy="20" r="4.5" fill="#8CB7FF"/>
+      <line x1="262" y1="20" x2="440" y2="20" stroke="#51648F" stroke-width="1" stroke-dasharray="5 6"/>
+      <text x="460" y="24" fill="#9EB1D6" font-family="B612 Mono, monospace" font-size="12">?</text>
+    </svg>
+    <h1>No waypoint at this address</h1>
+    <p>The link may be mistyped, or the page may have moved.</p>
+    <p><a href="/">Back to the start</a></p>
   </main>
 </body>
 </html>
